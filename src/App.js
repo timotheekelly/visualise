@@ -4,6 +4,7 @@ import RepoDetails from "./RepoDetails";
 import UserStats from './UserStats';
 import './App.css';
 import BarChart from './BarChart';
+import * as d3 from "d3";
 
 function App() {
   const [username, setUsername] = useState('');
@@ -13,6 +14,16 @@ function App() {
   const [userStats, setUserStats] = useState({});
   const [details, setDetails] = useState({});
   const [detailsLoading, setDetailsLoading] = useState(false);
+
+  const [data, setData] = React.useState([]);
+
+  React.useEffect(() => {
+    d3.json("/chart-data.json").then((d) => {
+      setData(d);
+      setLoading(false);
+    });
+    return () => undefined;
+  }, []);
 
   useEffect(() => {
     setRepos([]);
@@ -88,6 +99,7 @@ function App() {
           <div className="results-container">
             <div className="barchart-container">
               <BarChart details={details.stargazers_count} /> 
+              <BarChart data={data} />
             </div> 
             {repos.map(renderRepo)}
           </div>
