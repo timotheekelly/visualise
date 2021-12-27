@@ -86,9 +86,9 @@ function App() {
             <button className='button' onClick={handleSubmit}>{loading ? "Searching..." : "Search"}</button>
           </form>
           <div className="results-container">
-            {/* <div className="barchart-container">
+            <div className="barchart-container">
               <BarChart details={details.stargazers_count} /> 
-            </div> */}
+            </div> 
             {repos.map(renderRepo)}
           </div>
         </div>
