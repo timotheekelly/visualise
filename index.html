@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Github Visualiser </title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+</head>
+
+<body>
+    <div class="grid-container">
+        <div class="left-container">
+            <div class="input-container">
+                <div>Username: <input id="user" type="text" /></div>
+                <div>Token: <input id="token" type="text" /></div>
+                <div><button onclick="handleInput()">Submit </button></div>
+            </div>
+            <div class="profile-container">
+                <img class="img-fluid" id="img" src=''>
+                <p id="name"></p>
+                <p id="username"></p>
+                <p id="date_created"></p>
+                <p id="public_repos"></p>
+            </div>
+        </div>
+        <div class="right-container">
+            <div class="row">
+                <div id="hourly_commit_chart" class="chart" ></div>
+            </div>
+            <div class="row">
+                <div id="daily_commit_chart" class="chart" ></div>
+            </div>
+            <div class="row">
+                <div id="monthly_commit_chart" class="chart" ></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- js for application -->
+    <script src="app.js" defer></script>
+</body>
+
+</html>
