@@ -37,3 +37,7 @@ This chart is to display the amount of commits per month by looking at the recen
 This section displays the percentage of all languages used in the repos 
 ![languages](images/most-used-languages.png)
 
+#### Minor Notes
+The use of nginx over ubuntu for the docker image is purely related to the smaller size
+
+I opted not to use any frameworks with javascript as there were more resources online to assist  to reduce the complexity of the code (lesson learned the hard way)
