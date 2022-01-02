@@ -41,3 +41,5 @@ This section displays the percentage of all languages used in the repos
 The use of nginx over ubuntu for the docker image is purely related to the smaller size
 
 I opted not to use any frameworks with javascript as there were more resources online to assist  to reduce the complexity of the code (lesson learned the hard way)
+
+I used Apexjs charts as they were easy to integrate and I like the interface.
