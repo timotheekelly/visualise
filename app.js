@@ -146,6 +146,7 @@ async function get_monthly_commits(repo, user, token) {
       })
 }
 
+// this funtion was heavilly inspired by the source code of the video https://www.youtube.com/watch?v=QSszTx2y-Wys&t=5sz so I want to attribute it appropriately
 async function get_languages(repo, user, token) {
     let label = [];
     let data = [];
