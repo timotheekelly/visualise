@@ -1,7 +1,6 @@
 function handleInput() {
     var user = document.getElementById("user").value !== "" ? document.getElementById("user").value : undefined;
     var token = document.getElementById("token").value !== "" ? document.getElementById("token").value : undefined;
-
     main(user, token);
 }
 
@@ -20,27 +19,6 @@ async function getRequest(url, token) {
     return data;
 }
 
-async function main(user, token) {
-    let url = `https://api.github.com/users/${user}/repos`;
-    
-    let repo = await getRequest(url, token).catch(error => console.error(error));
-
-    url = `https://api.github.com/users/${user}`;
-    let user_info = await getRequest(url, token).catch(error => console.error(error));
-    
-    // Render chart
-    hourlyCommitChart.render();
-    dailyCommitChart.render();
-    monthlyCommitChart.render();
-    languagesChart.render();
-
-    get_user_info(user_info);
-    get_hourly_commits(repo, user, token);
-    get_daily_commits(repo, user, token);
-    get_monthly_commits(repo, user, token);
-    get_languages(repo, user, token);
-}
-
 function get_user_info(user_info) {
     let img = document.getElementById('img');
     img.src = user_info.avatar_url
@@ -50,9 +28,6 @@ function get_user_info(user_info) {
 
     let username = document.getElementById('username');
     username.innerHTML = `<h4>Username: </h4>${user_info.login}`;
-
-    let created_at = document.getElementById('date_created');
-    created_at.innerHTML = `<h4>Date Created: </h3>${user_info.created_at}`;
 
     let public_repos = document.getElementById('public_repos');
     public_repos.innerHTML = `<h4>Public Repos: </h3>${user_info.public_repos}`;
@@ -171,7 +146,34 @@ async function get_monthly_commits(repo, user, token) {
       })
 }
 
+async function get_languages(repo, user, token) {
+    let label = [];
+    let data = [];
 
+    for (i in repo) {
+        let url = `https://api.github.com/repos/${user}/${repo[i].name}/languages`;
+        let languages = await getRequest(url, token).catch(error => console.error(error));
+
+        for (language in languages) {
+            if (label.includes(language)) {
+                for (i = 0; i < label.length; i++) {
+                    if (language == label[i]) {
+                        data[i] = data[i] + languages[language];
+                    }
+                }
+            } else {
+                label.push(language);
+                data.push(languages[language]);
+             }
+        }
+    }
+
+    languagesChart.updateOptions({
+        series: data,
+        labels: label
+      })
+
+}
 
 var optionsHourly = {
     chart: {
@@ -297,8 +299,28 @@ var optionsMonthly = {
         }
         };  
   
+async function main(user, token) {
+    let url = `https://api.github.com/users/${user}/repos`;
+    
+    let repo = await getRequest(url, token).catch(error => console.error(error));
+
+    url = `https://api.github.com/users/${user}`;
+    let user_info = await getRequest(url, token).catch(error => console.error(error));
+    
+    // Render chart
+    hourlyCommitChart.render();
+    dailyCommitChart.render();
+    monthlyCommitChart.render();
+    languagesChart.render();
+
+    get_user_info(user_info);
+    get_hourly_commits(repo, user, token);
+    get_daily_commits(repo, user, token);
+    get_monthly_commits(repo, user, token);
+    get_languages(repo, user, token);
+}
+
 var hourlyCommitChart = new ApexCharts(document.querySelector("#hourly_commit_chart"), optionsHourly);
 var dailyCommitChart = new ApexCharts(document.querySelector("#daily_commit_chart"), optionsDaily);
 var monthlyCommitChart = new ApexCharts(document.querySelector("#monthly_commit_chart"), optionsMonthly);
 var languagesChart = new ApexCharts(document.querySelector("#languages_chart"), optionsLanguages);
-
