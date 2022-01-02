@@ -2,6 +2,10 @@
 What I wanted to visualise was when an engineer is most productive. I decide to look at the commits at time of day, day of the week, and month of the year.
 This data could be used along with other metrics to see if overall consistancy could be improved.
 
+Using my username, you can see that most of my commits are between 6 and 9. I work and go to college so that makes sense.
+My commits are lower on a Tuesday and Thursday. Those are the days I meal prep so that would make sense.
+My commits shot up once college started back. I like to keep my personal projects in private repos until I'm finished them (and I'm terrible for finishing ersonal projects before moving onto the next, something I now realise and should address), so that makes sense too.
+
 ## How to run 
 1. Clone the repo from `git clone https://github.com/timotheekelly/visualise.git`
 2. cd visualiser
