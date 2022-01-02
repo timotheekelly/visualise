@@ -1,5 +1,5 @@
 ## Premise
-What I wanted to visualise was when an engineer is most productive. I decide to look at the time of day, day of the week, and month of the year.
+What I wanted to visualise was when an engineer is most productive. I decide to look at the commits at time of day, day of the week, and month of the year.
 This data could be used along with other metrics to see if overall consistancy could be improved.
 
 ## How to run 
