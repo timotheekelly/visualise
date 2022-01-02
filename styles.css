@@ -1,27 +1,79 @@
 * {
     margin: 0px;
     padding: 0px;
+    font-family: 'Roboto', sans-serif;
 }
 
 body {
-    width: 98vw;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(31,36,50);
+    color: rgb(246,246,247);
+}
+
+input {
+    padding: 0.1rem 1rem;
+    width: 100%;
+    outline: 0;
+    font-size: 1.1rem;
+    padding: 0.25rem 0;
+    background: transparent;
+    transition: border-color 0.2s;
+    border: 0;
+    border-bottom: 2px solid white;
+    color: rgb(246,246,247);
+}
+
+button {
+    width: 100%;
+    font-size: 1.1rem;
+    margin: 1rem 0;
+    padding: 0.15rem 0rem;
+}
+
+p {
+    padding: 0.25rem;
+}
+
+.profile-Container {
+    padding: 5rem auto;
+    text-align: left;
+}
+
+.input-container > div {
+    padding: 0.25rem;
+}
+
+.img-icon {
+    padding: 2rem;
+    width: 50%;
 }
 
 .grid-container {
     display: grid;
+    grid-template-columns: 25% 70%;
   }
 
 .left-container {
-    margin: 0 auto;
-    overflow: hidden;
-    width: 40%;
-    text-align: center;
+    padding: 2rem;
 }
 
 .right-container {
-    margin: 0 auto;
+    display: grid;
+    width: 100%;
+    grid-template-columns: 50% 50%;
     overflow: hidden;
-    width: 60%;
+    text-align: center;
+}
+
+.left-col {
+    width: 100%;
+    text-align: center;
+}
+
+.right-col {
+    margin: 0 auto;
+    width: 100%;
     text-align: center;
 }
 
@@ -31,4 +83,9 @@ body {
 
 .chart {
     width: 100%;
+}
+
+.pie {
+    margin: 0 auto;
+    width: 85%;
 }

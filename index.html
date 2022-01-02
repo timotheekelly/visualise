@@ -13,12 +13,18 @@
     <div class="grid-container">
         <div class="left-container">
             <div class="input-container">
-                <div>Username: <input id="user" type="text" /></div>
-                <div>Token: <input id="token" type="text" /></div>
-                <div><button onclick="handleInput()">Submit </button></div>
+                <div>
+                    <input id="user" type="text" placeholder="Username: "/>
+                </div>
+                <div>
+                    <input id="token" type="text" placeholder="Token: "/>
+                </div>
+                <div>
+                    <button onclick="handleInput()">Submit </button>
+                </div>
             </div>
             <div class="profile-container">
-                <img class="img-fluid" id="img" src=''>
+                <img class="img-icon" id="img" src=''>
                 <p id="name"></p>
                 <p id="username"></p>
                 <p id="date_created"></p>
@@ -26,14 +32,21 @@
             </div>
         </div>
         <div class="right-container">
-            <div class="row">
-                <div id="hourly_commit_chart" class="chart" ></div>
+            <div class="left-col">
+                <div class="row">
+                    <div id="hourly_commit_chart" class="chart" ></div>
+                </div>
+                <div class="row">
+                    <div id="daily_commit_chart" class="chart" ></div>
+                </div>
             </div>
-            <div class="row">
-                <div id="daily_commit_chart" class="chart" ></div>
-            </div>
-            <div class="row">
-                <div id="monthly_commit_chart" class="chart" ></div>
+            <div class="right-col">
+                <div class="row">
+                    <div id="monthly_commit_chart" class="chart" ></div>
+                </div>
+                <div class="row">
+                    <div id="languages_chart" class="pie" ></div>
+                </div>
             </div>
         </div>
     </div>
