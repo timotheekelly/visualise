@@ -18,27 +18,33 @@ You should be able to view at either `localhost` or `localhost:80`
 
 ### Input Section
 You then enter the username of the profile you want to visualise 
-(the authorisation token is optional but will be needed if API calls are exceeded)
+(the authorisation token is optional but will be needed if API calls are exceeded).
+
 ![input](images/input-section.png)
 
 ### Bio
-This info is just to provide some context on the user being displayed
+This info is just to provide some context on the user being displayed.
+
 ![bio](images/bio.png)
 
 ### Commits Per Hour
 This chart is to display the amount of commits per hour by looking at the recent most 100 commits in each repo. 
+
 ![commits](images/commits-per-hour.png)
 
 ### Commits Per Day
 This chart is to display the amount of commits per day by looking at the recent most 100 commits in each repo. 
+
 ![commits](images/commits-per-day.png)
 
 ### Commits Per Month
 This chart is to display the amount of commits per month by looking at the recent most 100 commits in each repo. 
+
 ![commits](images/commits-per-month.png)
 
 ### Most Used Languages
-This section displays the percentage of all languages used in the repos 
+This section displays the percentage of all languages used in the repos.
+
 ![languages](images/most-used-languages.png)
 
 #### Minor Notes
