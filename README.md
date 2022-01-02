@@ -7,6 +7,6 @@
 You should be able to view at either `localhost` or `localhost:80` as port 80 is the default
 
 You then enter the username of the profile you want to visualise (the authorisation token is optional but will be needed if API calls are exceeded)
-![(images/bio.png)
+![bio](images/bio.png)
 
 Graph one shows 
